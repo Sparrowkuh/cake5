@@ -22,12 +22,13 @@
                         <span class="sign-up active">Sign Up</span>
                     </div>
                     <div class="sign-in-up">
-                        <form class="sign-up-form active" action="start.html" method="get">
+                        <form class="sign-up-form active" action="start.html" method="get" onsubmit="saveNickname()">
                             <input type="text" placeholder="Email" name="email" />
                             <input type="password" placeholder="Password" name="password" />
-                            <input type="text" placeholder="nickname" name="nickname" />
+                            <input type="text" placeholder="Nickname" name="nickname" />
                             <input type="submit" value="Sign Up" />
                         </form>
+                        
 
                         <div class="divider">
                             <span>or</span>
@@ -46,6 +47,12 @@
         </div>
         <script>
             // Since sign-up is always active, no need for the event listener logic
+        </script>
+        <script>
+            function saveNickname() {
+                var nickname = document.querySelector('input[name="nickname"]').value;
+                localStorage.setItem('nickname', nickname);
+            }
         </script>
     </body>
 </html>
